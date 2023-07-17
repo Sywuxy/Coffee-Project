@@ -1,0 +1,101 @@
+@import 'variables.scss';
+@import 'mixin.scss';
+.header{
+    @include flexCenter(row);
+    
+    .logo-wrapper{
+        @include flexCenter(row);
+        .site-logoImg{
+            margin: $LogoMargin;
+        }
+
+        .site-name{
+            font-family: $CedarvileFont;
+            font-weight: weights(normal);
+            font-size: 32px;
+            line-height: line-heights(normal);
+            margin: $Site-name-margin;
+            color: black;
+            text-decoration: none;
+
+            
+        }
+        :hover{
+            @include transitionSet(0.3s);
+            color: slategrey;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        :not(:hover){
+            @include transitionSet(0.3s);
+            color: black;
+        }
+    }
+    .header-list{
+        @include flexCenter(row);
+        list-style: none;
+        margin: 60px 0 0 190px;
+        font-family: $JosefinSans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: weights(bold);
+        text-align: justify;
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        .header-list-item{
+            position: relative;
+            margin: 0px 0 0 60px;
+        }
+
+        .text-link{
+            
+            :hover{
+                @include transitionSet(0.3s);
+                color: plum;
+            }
+
+            :not(:hover){
+                @include transitionSet(0.5s);
+                color: black;
+            }
+        }
+
+        .contact-btn{
+            @include transitionSet(0.2s);
+            position: absolute;
+            width: 135px;
+            height: 43px;
+            background: var(--primary-green, #2D635E);
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            border-radius: 10px;
+            margin: -10px 0 0 0;
+        }
+        .animated-contact-btn{
+            
+            :hover{
+                width: 135px;
+                height: 43px;
+                background: silver;
+                color: white;
+                @include flexCenter(row);
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                transition: 0.4s;
+                margin: -5px 0 0 0;
+            }
+
+            :not(:hover){
+                @include transitionSet(0.3s);
+                background: var(--primary-green, #2D635E);
+                margin: -10px 0 0 0;
+            }
+        }
+    }
+}
+
